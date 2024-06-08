@@ -1,0 +1,125 @@
+@import '../variables';
+.footer{
+margin-left:auto;
+margin-right: auto;
+
+width: 100%;
+height: 373.4px;
+background: #061311;
+
+}
+.footer_block{
+    display: grid;
+    grid-template-columns:0.5fr 0.3fr 1fr 0.9fr 0.7fr 1fr;
+    grid-template-rows:373px;
+
+    
+}
+
+.footer_info{
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 70%;
+    width: 100%;
+    grid-column: 2;
+    grid-row: 1;
+ 
+
+}
+.about{
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 70%;
+    width: 100%;
+    grid-column: 4;
+    grid-row: 1;
+}
+.footer_title{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #E4DAC9;
+    margin-bottom: 10px;
+    }
+ 
+
+.text{
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 24px;
+display: flex;
+align-items: center;
+color: #E4DAC9;
+}
+.text_about{
+margin-top: 20px;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+color: #E4DAC9;
+    }
+.number{
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+color: #E4DAC9;
+margin-left: 15px;
+}
+.number_phone{
+    margin-top: 10px;
+    display: flex;
+}
+.socialNet{
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 70%;
+    width: 100%;
+    grid-column: 5;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+}
+.networks{
+    margin-top: 10px;
+    display: flex;
+    gap:15px;
+    margin-bottom: 10px;
+}
+.logo{
+    height: 70%;
+    width: 100%;
+    grid-column: 6;
+    grid-row: 1;
+    align-content
+    : end;
+
+}
+.time{
+    margin-top: 10px;
+    display: flex;
+    gap:15px;
+}
+.time_text{
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 15px;
+display: flex;
+align-items: center;
+color: #E4DAC9;}
+

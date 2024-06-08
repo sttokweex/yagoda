@@ -1,0 +1,52 @@
+@import '../variables';
+
+.sort {
+  position: relative;
+  &__label {
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-right: 8px;
+    }
+
+    b {
+      margin-right: 8px;
+    }
+
+    span {
+      color: linear-gradient(0deg, #7D3E00 -7.62%, #FFC170 14.51%, #FFEED8 32.4%, #FFC170 84.95%, #7D3E00 106.96%);
+      border-bottom: 1px dashed linear-gradient(0deg, #7D3E00 -7.62%, #FFC170 14.51%, #FFEED8 32.4%, #FFC170 84.95%, #7D3E00 106.96%);
+      cursor: pointer;
+    }
+  }
+
+  &__popup {
+    position: absolute;
+    right: 0;
+    margin-top: 15px;
+    background: #ffffff;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px 0;
+
+    ul {
+      overflow: hidden;
+      li {
+        padding: 12px 20px;
+        cursor: pointer;
+
+        &.active,
+        &:hover {
+          background: rgba(254, 95, 30, 0.05);
+        }
+
+        &.active {
+          font-weight: bold;
+          color: linear-gradient(0deg, #7D3E00 -7.62%, #FFC170 14.51%, #FFEED8 32.4%, #FFC170 84.95%, #7D3E00 106.96%);
+        }
+      }
+    }
+  }
+}
