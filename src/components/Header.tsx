@@ -1,9 +1,9 @@
-import React , { useState } from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import logoSvg from '../assets/img/logo.svg';
 import menuSvg from '../assets/img/burger.svg';
-import exitSvg from '../assets/img/exit.svg'
+import exitSvg from '../assets/img/exit.svg';
 import { selectCart } from '../redux/cart/selectors';
 
 export const Header: React.FC = () => {
@@ -12,7 +12,10 @@ export const Header: React.FC = () => {
   const isMounted = React.useRef(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const totalCount = items.reduce((sum: number, item: any) => sum + item.count, 0);
+  const totalCount = items.reduce(
+    (sum: number, item: any) => sum + item.count,
+    0,
+  );
 
   React.useEffect(() => {
     if (isMounted.current) {
@@ -21,48 +24,78 @@ export const Header: React.FC = () => {
     }
     isMounted.current = true;
   }, [items]);
-  
+
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
     const overlay = document.getElementById('overlay');
-    if (overlay) {
-      overlay.style.display = overlay.style.display === "block" ? "none" : "block";
+    const body = document.querySelector('body');
+
+    if (overlay && body) {
+      overlay.style.display =
+        overlay.style.display === 'block' ? 'none' : 'block';
+      body.style.overflow = body.style.overflow === '' ? 'hidden' : '';
     }
   };
+  const handleLinkClick = (e: React.MouseEvent) => {
+    const target = e.target as HTMLElement;
 
+    if (target.tagName === 'A' || target.tagName === 'IMG') {
+      toggleMenu();
+    }
+  };
   return (
     <div className="header">
       <div className="container">
-      <div className="header__menu-button">
-      <div style={{position: 'fixed',
-  top: '0',
-  left: '0',
-  width: '100%',
-  height: '100%',
-  backgroundColor:' rgba(0, 0, 0, 0.5)',
-  display: 'none', 
-  zIndex: '9', }} id="overlay"></div>
-  <button onClick={toggleMenu}>
-    <img width="30" src={menuSvg} alt="Menu"/>
-  </button>
-  {menuOpen && (
-    <div className="header__menu-dropdown">
-      <button onClick={toggleMenu} className="close-button" style={{position: 'absolute', top: '10px', right: '10px', cursor: 'pointer', background: 'none', border: 'none', fontSize: '20px'}}><img width="47" height='47' src={exitSvg} alt="exit"/></button> {/* Крестик для закрытия меню */}
-      <Link to="/" className='menu__logo'>
-        <div className="">
-          <img width="120" src={logoSvg} alt="Pizza logo" />
+        <div className="header__menu-button">
+          <div
+            style={{
+              position: 'fixed',
+              top: '0',
+              left: '0',
+              width: '100%',
+              height: '100%',
+              backgroundColor: ' rgba(0, 0, 0, 0.5)',
+              display: 'none',
+              zIndex: '9',
+            }}
+            id="overlay"
+          ></div>
+          <button onClick={toggleMenu}>
+            <img width="30" src={menuSvg} alt="Menu" />
+          </button>
+          {menuOpen && (
+            <div onClick={handleLinkClick} className="header__menu-dropdown">
+              <button
+                className="close-button"
+                style={{
+                  position: 'absolute',
+                  top: '10px',
+                  right: '10px',
+                  cursor: 'pointer',
+                  background: 'none',
+                  border: 'none',
+                  fontSize: '20px',
+                }}
+              >
+                <img width="47" height="47" src={exitSvg} alt="exit" />
+              </button>{' '}
+              {/* Крестик для закрытия меню */}
+              <Link to="/" className="menu__logo">
+                <div className="">
+                  <img width="120" src={logoSvg} alt="Pizza logo" />
+                </div>
+              </Link>
+              <a href="https://n900730.yclients.com" target="_blank">
+                Онлайн запись
+              </a>
+              <Link to="/home">Каталог товаров</Link>
+              <Link to="/service-catalog">Каталог услуг</Link>
+              <Link to="/about-us">О нас</Link>
+              <Link to="/action">Акции</Link>
+              <Link to="/contacts">Контакты</Link>
+            </div>
+          )}
         </div>
-      </Link>
-      <a href="https://n900730.yclients.com" target="_blank" >Онлайн запись</a>
-      <Link to="/home">Каталог товаров</Link>
-      <Link to="/service-catalog">Каталог услуг</Link>
-      <Link to="/about-us">О нас</Link>
-      <Link to="/action">Акции</Link>
-      <Link to="/contacts">Контакты</Link>
-    </div>
-  )}
-</div>
-
 
         <Link to="/">
           <div className="header__logo">
@@ -79,7 +112,8 @@ export const Header: React.FC = () => {
                 height="18"
                 viewBox="0 0 18 18"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg">
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
                   d="M6.33333 16.3333C7.06971 16.3333 7.66667 15.7364 7.66667 15C7.66667 14.2636 7.06971 13.6667 6.33333 13.6667C5.59695 13.6667 5 14.2636 5 15C5 15.7364 5.59695 16.3333 6.33333 16.3333Z"
                   stroke="white"

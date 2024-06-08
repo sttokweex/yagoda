@@ -6,15 +6,15 @@ import Footer from '../components/footer';
 
 const MainLayout: React.FC = () => {
   return (
-   <>
+    <>
       <Header />
       <div className="wrapper">
-      <div className="content">
-        <Outlet />
+        <div className="content">
+          <Outlet />
+        </div>
       </div>
-      </div>
-      <Footer/>
-      </>
+      <Footer />
+    </>
   );
 };
 

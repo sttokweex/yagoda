@@ -126,9 +126,9 @@ export const Manicure: React.FC = () => {
         <div style={{width:'72%',float:'left',textAlign:'end'}}><img src={arrowRightSvg}></img></div>
       
           <div className="empList">
-            <EmployeeCard svg={master1} name={'Людмила'} prof={'Мастер маникюра'} bool={false}/>
-            <EmployeeCard svg={master3} name={'Вероника'} prof={'Мастер маникюра'} bool={false}/>
-            <EmployeeCard svg={master4} name={'Алина'} prof={'Топ-мастер маникюра'} bool={false}/>
+            <EmployeeCard imageSrc={master1} name={'Людмила'} specialization={'Мастер маникюра'} bool={false}/>
+            <EmployeeCard imageSrc={master3} name={'Вероника'} specialization={'Мастер маникюра'} bool={false}/>
+            <EmployeeCard imageSrc={master4} name={'Алина'} specialization={'Топ-мастер маникюра'} bool={false}/>
           </div>
 
         </div>
